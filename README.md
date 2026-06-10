@@ -35,7 +35,7 @@ You will need your own postgres database for this project. If you don't have one
 
 ### Environment Variables
 
-Create a `.env` file in the project root with DATABASE_URL and GEMINI_API_KEY
+Create a `.env` file in the `server/` directory with DATABASE_URL and GEMINI_API_KEY
 (or your preferred LLM)
 
 - The database must be **Postgres with pgvector** (local or Supabase)
