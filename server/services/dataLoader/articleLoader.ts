@@ -1,15 +1,5 @@
 import { RawDocument } from './pdfLoader';
-
-const GIST_BASE_URL =
-  'https://gist.githubusercontent.com/JonaCodes/394d01021d1be03c9fe98cd9696f5cf3/raw';
-
-const ARTICLE_IDS = [
-  'military-deployment-report',
-  'urban-commuting',
-  'hover-polo',
-  'warehousing',
-  'consumer-safety',
-];
+import { GIST_BASE_URL, ARTICLE_IDS } from '../../config/constants';
 
 export const loadArticleDocuments = async (): Promise<RawDocument[]> => {
   const documents: RawDocument[] = [];

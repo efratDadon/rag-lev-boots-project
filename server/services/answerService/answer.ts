@@ -12,13 +12,13 @@ export const answerQuestion = async (userQuestion: string): Promise<string> => {
   // Chunks are ORDER BY distance ASC, so chunks[0] is already the best match.
   // Skip the LLM call entirely when nothing retrieved is even topically close.
   if (chunks.length === 0 || chunks[0].distance > MAX_RELEVANT_DISTANCE) {
-    console.log(
+    console.error(
       `[ask] GATED (no LLM call) - question="${userQuestion}" bestDistance=${chunks[0]?.distance ?? 'n/a'} threshold=${MAX_RELEVANT_DISTANCE}`
     );
     return UNANSWERABLE_MESSAGE;
   }
 
-  console.log(
+  console.error(
     `[ask] CALLING LLM - question="${userQuestion}" bestDistance=${chunks[0].distance} threshold=${MAX_RELEVANT_DISTANCE}`
   );
   const prompt = buildPrompt(userQuestion, chunks);
